@@ -93,6 +93,9 @@
                                             <segment title="none"/>
                                         </segments>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="decimalSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="UQc-5a-T3q"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -140,6 +143,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="decimalSegment" destination="hBD-82-t9p" id="6ud-vC-dqF"/>
                         <outlet property="formulaPicker" destination="grn-qE-kZ6" id="cO5-FV-ISR"/>
                         <outlet property="fromUnitsLabel" destination="Cor-Tm-P8h" id="T5Q-mT-VMR"/>
                         <outlet property="resultsLabel" destination="zYP-ee-ivp" id="X0Q-Ek-xBT"/>
