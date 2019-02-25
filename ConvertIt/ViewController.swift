@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var userInput: UITextField!
+    @IBOutlet weak var fromUnitsLabel: UILabel!
+    @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var formulaPicker: UIPickerView!
+    
     var formulaArray = ["miles to kilometers",
                         "kilometers to miles",
                         "feet to meters",
@@ -17,10 +23,8 @@ class ViewController: UIViewController {
                         "meters to feet",
                         "meters to yards"]
     
-    @IBOutlet weak var userInput: UITextField!
-    @IBOutlet weak var fromUnitsLabel: UILabel!
-    @IBOutlet weak var resultsLabel: UILabel!
-    @IBOutlet weak var formulaPicker: UIPickerView!
+    var fromUnits = ""
+    var toUnits = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +54,11 @@ extension ViewController:UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        fromUnitsLabel.text = formulaArray[row]
+        let unitsArray = formulaArray[row].components(separatedBy: " to ")
+        fromUnits = unitsArray[0]
+        toUnits = unitsArray[1]
+        fromUnitsLabel.text = fromUnits
+        resultsLabel.text = toUnits
     }
     
 }
